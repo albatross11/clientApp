@@ -6,7 +6,12 @@
           <option name="url" value="http://github.com" />
           <option name="userName" value="albatross11" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/albatross11/clientApp.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
+    <option name="cloneParentDir" value="C:\Users\yjq\WebstormProjects" />
   </component>
 </application>
