@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="utf-8" lang="utf-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="baidu-site-verification" content="Q0naaiQp4s" />
+<meta name="360-site-verification" content="142612e795afbed58ec7a70045499abd" />
+<title>新格元素科技有限公司 Think Go Think App</title>
+<meta name="Keywords" content="Think App,企业手机网站，企业触屏手机网站，企业手机APP，新格元素,手机网站，APP开发，企业网站，企业官网，移动营销，互联网营销" />
+<meta name="description" content="北京新格元素科技有限公司，为您提供手机网站、手机APP等整合移动互联网营销解决方案，根据您的需求订制APP产品、企业网站及400电话、在线客服等增值服务" /><link rel="stylesheet" type="text/css" media="all" href="/res/css/css.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/res/css/reset.css" />
+<script type="text/javascript" src="/res/js/j15.js"></script>
+<script type="text/javascript" src="/res/js/jquery.scroll-follow.js"></script>
+<script type="text/javascript" src="/res/js/thinkgo.js"></script>
+<script type="text/javascript">
+$(function(){
+	var navpoint=[[0,111],[111,157],[268,157],[425,156],[581,158]];
+	var navobj=[$('#comm_nav_box a'),$('#comm_nav_span'),$('#comm_nav_box'),$('#index_bg_box'),$('#index_banner')];
+	var navclass=['comm_nav_bottom1','comm_nav2'];
+	var bannerBgClass=['index_bg_box_0','index_bg_box_1','index_bg_box_2','index_bg_box_3','index_bg_box_4'];
+	var navDefSet={'index':0,'thinkapp':1,'light':2,'development':3,'services400':4};
+	var navanitime=0.3;
+	var navDefVal=navDefSet['index'];
+	if(navDefVal!=$.undefined ){
+		nav_def_set(navDefSet['index'],navpoint,navobj,navclass,navanitime);
+		nav_ani_init(0,'index',navpoint,navobj,navclass,navanitime,bannerBgClass);
+		banner_ani_render(0,navobj[4]);
+	}
+	comm_weixin_init();
+
+	$('.index_banner_btn span.index_banner_left').click(function(){
+		 var parent=$(this).parents('div.index_bg_box').attr('class');
+		 var index=parent.charAt(parent.length*1 - 1)*1-1;
+		 	if(index<0) index=4;
+		 	$(this).parents('div.index_bg_box').attr('class','index_bg_box index_bg_box_'+index);  
+		 	banner_ani_render(index,navobj[4]);
+		 	nav_def_set(index,navpoint,navobj,navclass,navanitime);  
+	});
+	$('.index_banner_btn span.index_banner_right').click(function(){
+		 var parent=$(this).parents('div.index_bg_box').attr('class');
+		 var index=parent.charAt(parent.length*1 - 1)*1+1;
+		 	if(index>4) index=0;
+		 	$(this).parents('div.index_bg_box').attr('class','index_bg_box index_bg_box_'+index);   
+		 	banner_ani_render(index,navobj[4]);  
+		 	nav_def_set(index,navpoint,navobj,navclass,navanitime); 
+		 	
+	})
+});	
+</script>
+</head>
+<body>
+
+<div id="index_bg_box" class="index_bg_box index_bg_box_0">
+	<a name="top"></a>
+<div class="comm_top">
+	<div id="cache_reader">
+		<em class="r1"></em><em class="r2"></em><em class="r3"></em><em class="r4"></em><em class="r5"></em>
+		<em class="r6"></em><em class="r7"></em><em class="r8"></em><em class="r9"></em>
+	</div>
+	<div class="comm_top_logo" onclick="javascript:window.location.href='/';">
+		<h1><a href="/">新格元素</a></h1>
+	</div>
+	<div class="com_top_400"><a href="tel:4006869928">4006869928</a></div>
+	<ul class="com_top_toollink"> 
+
+		<li><a href="#here">登陆</a></li>
+		<li>|</li>
+		<li><a href="#here">注册</a></li>
+		<li><a href="#here">购物车</a></li>
+<!-- 
+		<li><a target="_blank" href="http://user.nowthinkgo.com/login">登陆</a></li>
+		<li>|</li>
+		<li><a target="_blank" href="http://user.nowthinkgo.com/reg">注册</a></li>
+		<li><a target="_blank" href="http://cart.nowthinkgo.com">购物车</a></li> -->
+
+	</ul>
+</div>
+<div class="comm_nav"  id="comm_nav_box">
+	<h1>
+		<ul>
+			<li class="nav_home"><a href="/">Home 首页</a></li>
+			<li class="nav_think_app"><a href="/thinkapp">THINK APP 手机网站&App</a></li>
+			<li class="nav_dev_app"><a href="/light">Light website 企业轻官网</a></li>
+			<li class="nav_dev_web"><a href="/development">Development 项目定制开发</a></li>
+			<li class="nav_vas"><a href="/services400">400/VS 400&增值服务</a></li>
+			<li class="nav_agents"><a href="/agents">Network 销售网点</a></li>
+			<li class="nav_contact"><a href="/aboutus/contact">Contact 联系我们</a></li>
+		</ul>
+	</h1>
+</div>
+<div class="comm_nav_bottom">
+	<span id="comm_nav_span" style="display:none;"></span>
+</div>
+
+
+
+<!-- 
+<div class="_mark"></div> 
+<div class="login_box popup">
+	<ul class="_title">
+		<li class="_user"><a href="" title="">用户登录</a></li> 
+		<li class="_distributor"><a href="" title="">经销商登录</a></li> 
+	</ul> 
+	<form action="" method="get" > 
+		<label><em>账号：</em><input type="text" class="input"> </label>			
+		<label><em>密码：</em><input type="password" class="pas"> </label>	
+		<label class="login_code"><em>验证码：</em><input type="text" class="code"> </label>
+		<p class="code_img"></p>	
+		<label class="login_remember"><span class="text">记住我，下次自动登录</span><span class="btn"><em>N</em><em>O</em><b></b> </span></label>	
+		<p class="login_btn"><input type="submit" name="" value="登录" class="btn"><input type="button" name="" value="关闭" class="btn cancel"></p>
+	</form>
+</div> 
+
+<div class="reg_box popup">
+	<ul class="_title">
+		<li class="_user"><a href="" title="">用户注册</a></li> 
+		<li class="_distributor"><a href="" title="">已有账户，直接登陆</a></li> 
+	</ul> 
+	<form action="" method="get" > 
+		<label><em>邮箱：</em><input type="text" class="input"> </label>			
+		<label><em>电话：</em><input type="text" class="input"> </label>			
+		<label><em>密码：</em><input type="password" class="pas"> </label> 	 
+		<label class="again"><em>再次输入密码：</em><input type="password" class="pas"> </label> 	 
+		<p class="reg_btn"><input type="submit" name="" value="注册" class="btn"><input type="button" name="" value="关闭" class="btn cancel"></p>
+	</form>
+</div> 
+<div class="popup trial_box">
+	<h3 class="title">申请使用Think App</h3>
+	<form class="trial_con clearfix">
+		<div class="left">
+			<h4>您的联系方式：</h4>
+			<label><em>姓名：</em><input type="text" class="input"> </label>
+			<label><em>性别：</em><input type="text" class="input"> </label>
+			<label><em>电话：</em><input type="text" class="input"> </label>
+			<label><em>邮箱：</em><input type="text" class="input"> </label>
+			<label><em>QQ：</em><input type="text" class="input"> </label>
+			<label class="else"><em>其他联系方式：</em><input type="text" class="input"> </label>
+		</div> 
+		<div class="right ">
+			<h4>您的企业信息：</h4>
+			<label class="name"><em>公司名称：</em><input type="text" class="input"> </label>
+			<label><em>行业：</em>
+				<select name="" >
+					<option value="请选择">请选择</option> 
+				</select>
+			</label>
+			<label class="name"><em>公司地址：</em><input type="text" class="input"> </label>
+			<label class="name"><em>公司网址：</em><input type="text" class="input"> </label>
+			<label class="else"><em>其他联系方式：</em><textarea name=""></textarea></label>
+		</div> 
+		<p class="reg_btn"><input type="submit" name="" value="注册" class="btn"><input type="button" name="" value="关闭" class="btn cancel"></p>
+	</form> 
+</div> 		
+
+ -->
+	<div class="index_banner" id="index_banner"></div>
+	<div class="index_banner_btn">
+		<span class="index_banner_left"></span><span class="index_banner_right"></span> 
+	</div><!-- / -->
+</div>
+<!-- <h2 class="index_recommand_title"></h2> -->
+<div class="index_recommand">
+	<div class="index_thinkapp">
+		<a href="/thinkapp" title="">
+			<h3 class="thinkapp_title">thinkapp  手机网站+微信官网+app</h3>
+			<ul>
+				<li>精美设计、完美体验、量身定制</li>
+				<li>丰富的互动功能：客服/咨询/留言/地图/拨号</li>
+				<li>多种业务形式：订购/预订/询价/意向 </li>
+				<li>融合微博、微信等社会化营销、搜索引擎、市场分发等多种推广渠道</li>
+				<li>终端精准推送、新品推荐，会员关怀 掌握主动权</li>
+				<li>多平台适用支持IOS、Android</li>
+			</ul>
+		</a>	
+	</div>
+	<div class="index_thinkapp_list">
+		<dl class="app clearfix">
+			<a href="/development#project_app" title="">
+				<dt></dt>
+				<dd>智能设备App应用<br />订制开发</dd>
+			</a>
+		</dl>
+		<dl class="web clearfix">
+			<a href="/development#project_web" title="">
+				<dt></dt>
+				<dd>网站管理应用<br />订制开发</dd>
+			</a>
+		</dl>
+		<dl class="game clearfix">
+			<a href="/development#project_game" title="">
+				<dt></dt>
+				<dd>商业手机游戏<br />订制开发</dd>
+			</a>
+		</dl>
+	</div>
+	<div class="index_thinkapp_list b_l">
+		<dl class="vas clearfix">
+			<a href="/services400" title="">
+				<dt></dt>
+				<dd>短彩信、营销推广<br />增值服务... ...</dd>
+			</a>
+		</dl>
+		<dl class="mart clearfix">
+			<a href="/services400" title="">
+				<dt></dt>
+				<dd>企业智能呼叫中心</dd>
+			</a>
+		</dl>
+	</div>
+	<div class="index_light">
+		<a href="/light" title="">
+			<h3 class="index_light_title">light 企业轻官网</h3>
+			<div class="index_light_main  clearfix">
+				<dl class="one">
+					<dt>轻</dt>
+					<dd>回归网站本质<br />拒绝概念接地气</dd>
+				</dl>
+				<span></span>
+				<dl class="two">
+					<dt>简</dt>
+					<dd>网站是叶子<br />您的产品服务才是花</dd>
+				</dl>
+				<span></span>
+				<dl class="three">
+					<dt>省</dt>
+					<dd>功能不多不少正合适<br />价格不高，易管理</dd>
+				</dl>
+				<dl class="four bottom">
+					<dt>快</dt>
+					<dd>BGP多线网络秒速访问<br />两周快速交付上线</dd>
+				</dl>
+				<span></span>
+				<dl class="five bottom">
+					<dt>质</dt>
+					<dd>产品好品质<br />设计、服务好品质</dd>
+				</dl>
+				<span></span>
+				<dl class="six bottom">
+					<dt>稳</dt>
+					<dd>7X24安全稳定保障<br />稳定运营服务</dd>
+				</dl>
+			</div>
+		</a>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<div class="index_content_spl">
+	<div class="spl app_scanlife">
+		<div class="scan_code"></div>
+		<h4>
+			<p>手机官网</p>
+			<p class="url">nowthinkgo.com</p>
+		</h4>
+		<h5>官方APP</h5>
+		<p class="clearfix">
+			<span class="apk clearfix"><a target="_blank" class="addroid" href="https://play.google.com/store">Andorid GooglePlay</a>下载APK本地安装</span>
+			<span class="ios"><a target="_blank" class="ios" href="http://www.apple.com.cn/itunes">Iphone App Store</a>下载IPA本地安装</span>
+		</p>	
+	</div>
+	<div class="index_content_news">
+		<h3 class="index_content_news_title"><span>News</span>最新动态 <a href="/news" title="">更多...</a></h3>
+		<ul>
+			<li><span>●</span><a href="javascript:;" onclick="javascript:news.viewshow(26);" title=""><b>2014/03/16</b><span>ThinkApp地图标点小贴士</span></a></li><li><span>●</span><a href="javascript:;" onclick="javascript:news.viewshow(17);" title=""><b>2013/11/25</b><span>微网站商业价值简析</span></a></li><li><span>●</span><a href="javascript:;" onclick="javascript:news.viewshow(16);" title=""><b>2013/11/25</b><span>移动浏览器都爱HTML 5</span></a></li><li><span>●</span><a href="javascript:;" onclick="javascript:news.viewshow(15);" title=""><b>2013/11/25</b><span>HTML 5的根基在于移动设备</span></a></li><li><span>●</span><a href="javascript:;" onclick="javascript:news.viewshow(14);" title=""><b>2013/11/25</b><span>企业移动互联网营销推广三步曲</span></a></li> 		</ul>
+	</div> 
+	<div class="online">
+		<h3 class="index_content_news_title"><span>Consult</span>在线咨询</h3>
+		<a href="http://qiao.baidu.com/v3/?module=default&controller=webim&action=index&siteid=4978179&lastsubid=0&from=%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%85%B4&bid=f63cfe382acefdd6047f53ee&chattype=1&ref=http%3A%2F%2Fwww.nowthinkgo1.com%2F"  target="_blank"  title="" class="btn pre-sale " >售前咨询</a>
+		<a href="http://qiao.baidu.com/v3/?module=default&controller=webim&action=index&siteid=4978179&lastsubid=0&from=%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%85%B4&bid=f63cfe382acefdd6047f53ee&chattype=1&ref=http%3A%2F%2Fwww.nowthinkgo1.com%2F"  target="_blank"  title="" class="btn customer " >售后咨询</a>
+		<a href="http://qiao.baidu.com/v3/?module=default&controller=webim&action=index&siteid=4978179&lastsubid=0&from=%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%85%B4&bid=f63cfe382acefdd6047f53ee&chattype=1&ref=http%3A%2F%2Fwww.nowthinkgo1.com%2F"  target="_blank"  title="" class="btn join" >加盟咨询</a>
+		<div class="online_map">
+			<a href="#here" title="">附近本地服务商</a>
+		</div><!-- / -->
+	</div>
+	<div class="clearfix"></div>
+</div>
+<div class="index_case">
+	<h3>服务<br/>客户</h3>
+	<div class="case_logo_box">
+		<!-- <img src="/res/images/case_logo/01.jpg"/> -->
+		<a href="#here" title=""><img src="/res/images/logo_mr.png" alt=""></a>
+		<a href="#here" title=""><img src="/res/images/logo_1.png" alt=""></a>
+		<a href="#here" title=""><img src="/res/images/logo_madc.png" alt=""></a>
+		<a href="#here" title=""><img src="/res/images/logo_2.png" alt=""></a>
+		<a href="#here" title=""><img src="/res/images/logo_tom.png" alt=""></a>
+		<a href="#here" title=""><img src="/res/images/logo_3.png" alt=""></a>
+		<span>
+			<a href="#here" title=""><img src="/res/images/logo_4.png" alt=""></a>
+			<a href="#here" title=""><img src="/res/images/logo_5.png" alt=""></a>
+			<a href="#here" title=""><img class="last" src="/res/images/logo_6.png" alt=""></a>
+		</span>
+	</div>
+	<div class="clearfix"></div>
+</div> 
+
+
+<!--资讯弹窗-->
+<div class="_mark" style="display:none;"></div> 
+<div class="news_view"  style="display:none;">
+	<div class="news_view_title">
+		<h3><!--标题--></h3>
+		<span class="_news_viewdate"><!--时间--></span> 
+	</div>
+	<div class="news_view_con"><!--内容--></div> 
+	<a href="#here" title="" class="btn"></a>
+	<input type="button" name="" onclick="javascript:news.viewhide();" value="关闭" class="btn">
+</div> 
+<script type="text/javascript">
+	$(function(){
+		news = {
+			'_date_format':function(date){   //日期格式化
+				var d = new Date(parseInt(date) * 1000);
+				return d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日 ';
+			},
+ 			'viewshow':function(id){
+ 				var url = '/news/ajaxnews?t='+new Date().getTime();
+				$.post(url, {'id':id}, function(n){
+					if(typeof(news)!="undefined"){
+ 						$('.news_view').find('.news_view_title h3').html(n.title);
+						$('.news_view').find('.news_view_title ._news_viewdate').html(news._date_format(n.time));
+						$('.news_view').find('.news_view_con').html(n.txt);
+
+						$('._mark').show();
+						$('.news_view').show();
+					}
+				}, 'json');
+			},
+			'viewhide':function(){
+				$('._mark').hide();
+				$('.news_view').hide();
+			}
+		}
+ 	});
+</script>
+<!--资讯弹窗  -END--><div class="comm_bottom">
+	<div class="bottom_links">
+		<a href="/aboutus">关于我们</a>
+		<span>｜</span> 
+		<a href="/aboutus/contact">联系我们</a>
+		<span>｜</span>  
+		<a href="/aboutus/jobs">工作机会</a>
+		<span>｜</span> 
+		<a target="_blank" href="http://faq.nowthinkgo.com">技术支持中心</a>
+		<span>｜</span> 
+		<a href="/agents">加盟 Think Go</a>
+		<span>｜</span>  
+		<a target="_blank" href="http://faq.nowthinkgo.com/">代理商登录</a>
+	</div>
+	<div class="bottom_icon">
+		<a target="_blank" class="sina" href="http://weibo.com/nowthinkgo">新格元素新浪微博</a>
+		<a target="_blank" class="tencent" href="http://t.qq.com/nowthinkgo">新格元素腾讯微博</a>
+		<a id="comm_weixin_btn" class="weixin" href="#here" title="新格元素微信账号 nowthinkgo">新格元素微信账号 nowthinkgo</a>
+	</div>
+	<div class="bottom_copyright">
+		<p>
+		北京新格元素科技有限公司版权所有 <a target="_blank" href="http://www.miitbeian.gov.cn"><font color="#ffffff">京ICP备13039067号</font></a><br/>
+		Copyright @ nowthinkgo.com 2013
+		</p>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<div id="comm_weixin_code" class="comm_weixin_code" style="display:none;">
+	<a href="#here">Close</a>
+	<div class="box">
+		<h3>搜索公共帐号：</h3>
+		<p>nowthinkgo</p>
+		<h3>或扫一扫二维码：</h3>
+		<span></span>
+	</div>
+	<div class="fix"></div>
+</div>
+<div style="display:none">
+<script type="text/javascript">
+// var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+// document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffd472ea6544547bfab0336c4af26ecb6' type='text/javascript'%3E%3C/script%3E"));      
+//http://agents.nowthinkgo.com   原来代理商登录指向页面
+</script>
+
+</div><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F97e91665ba5327fc3670d1ff56134729' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="utf-8" lang="utf-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1" name="viewport">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" type="text/css" media="all" href="res/css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="res/css/css.css" />
+<script src="res/js/jquery-2.1.1.min.js"></script>
+<script src="res/js/jquery.ui.widget.js"></script>
+<script src="res/js/jquery.iframe-transport.js"></script>
+<script src="res/js/jquery.fileupload.js"></script>
+<title>Diy印像工坊</title>
+</head>
+<body class="terminalUp">
+<div class="terminalUp">
+    <h4>将您手机中的照片上传到终端机</h4>
+    <div class="fileupload">
+    <input id="fileupload" type="file" name="files" data-url="">
+    <span>选择照片并上传</span>
+    </div>
+    <div id="progress">
+    	<div class="progress-bar"></div>
+    </div>
+</div>
+<script>
+$(function () {
+    'use strict';
+    var GetRequest=function() {
+        var url = location.search;              //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1),strs;
+            strs = str.split("&");
+            for(var i = 0; i < strs.length; i ++) {
+                theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    var Request = new Object();
+    Request = GetRequest();
+    var uploadUrl = 'http://'+Request['url'];
+    $('#fileupload').attr('data-url',uploadUrl);
+    console.log(uploadUrl)
+    $('#fileupload').fileupload({
+        url: uploadUrl,
+        dataType: 'json',
+        'start':function(){
+            $('#fileupload').hide();
+            $('#progress .progress-bar').text('0%');
+        },
+        'done': function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                var url=window.location.href,
+                    url=url.replace('//','/'),
+                    _spurl=url.split('/'),
+                    _location='http://'+_spurl[1]+'/frm/upok.json?img='+file.name+'&r='+new Date().getTime();
+                $.get(_location,function(_data){
+                    console.log(_data);
+                },'json');
+            });
+            $('#fileupload').parents('div.terminalUp:first').empty().append('<h5>照片上传成功<br>请在终端机上继续操作<br>您可以点击界面左上角“返回”离开本页面！</h5>');
+        },
+        'progressall': function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .progress-bar').text(progress+'%').css(
+                'width',
+                progress + '%'
+            );
+        }
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+});
+</script>
+</body> 
+</html>

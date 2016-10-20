@@ -1,0 +1,13 @@
+<div class="homeWeixinCode">
+	<input id="printerPassCode" value="" name="code" class="code" type="text" placeholder="请输入打印码或扫描二维码" autocomplete="off" onkeydown="javascript:printer.homebtn.wx_code_keydown($(this));" onkeyup="javascript:printer.homebtn.wx_code_keyup($(this));">
+	<div id="printerKeybord"></div>
+	<p>
+		<button id="id_wx_print_yes" class="btn yes" onclick="javascript:printer.homebtn.click_weixin_ok($(this));"><em>确认</em></button>
+		<button class="btn no" onclick="javascript:printer.homebtn.click_weixin_no($(this));"><em>取消</em></button>
+	</p>
+</div>
+<script type="text/javascript">
+$(function(){
+	
+});
+</script>

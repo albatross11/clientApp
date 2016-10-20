@@ -1,0 +1,57 @@
+<div class="editPhoto">
+	<div class="title1">
+		选择编辑照片类型
+	</div>
+	<div class="editLayer">
+	<table class="editLayer">
+		<tr>
+			<th>
+				<div id="listPhotosTypeCage" class="leftbar" id="leftBar">
+					<ul>
+						<li class="sel" url="frm/editPhoto.html">普通照<span></span></li>
+						<li url="frm/editCertificate.html">证件照<span></span></li>
+						<li url="frm/editPhoto.html">趣味合成照<span></span></li>
+					</ul>
+				</div>
+			</th>
+			<td>
+				<div id="listPhotosType" class="rightMain">
+					<div id="listOrdinary" class="icons">
+						<ul>
+							<li ctype="onephoto" class="sel"><span class="icon_a_1"></span><em>单张照片</em></li>
+							<li ctype="twophoto" ><span class="icon_a_2"></span><em>二合一</em></li>
+							<li ctype="threephoto"><span class="icon_a_3"></span><em>三合一</em></li>
+							<li ctype="fourphoto"><span class="icon_a_4"></span><em>四合一</em></li>
+						</ul>
+					</div>
+					<div id="listCertificate" class="icons">
+						<ul>
+							<li ctype="idcard" class="sel"><span class="icon_a_5"></span><em>身份证</em></li>
+							<li ctype="drivercard"><span class="icon_a_6"></span><em>驾驶证</em></li>
+							<li ctype="diploma"><span class="icon_a_7"></span><em>毕业证</em></li>
+							<li ctype="usavisa"><span class="icon_a_8"></span><em>赴美签证</em></li>
+						</ul>
+						<ul>
+							<li ctype="japanvisa"><span class="icon_a_9"></span><em>赴日签证</em></li>
+							<li ctype="passport"><span class="icon_a_10"></span><em>护照</em></li>
+							<li ctype="hkmpass"><span class="icon_a_11"></span><em>港澳通行证</em></li>
+						</ul>
+					</div>
+					<div id="lsitInterest" class="icons">
+						<ul>
+							<li ctype="interesting" class="sel"><span class="icon_a_12"></span><em>趣味合成照</em></li> 
+						</ul>
+					</div>
+
+					<p><button id="editPhotoTypesBtnOk" class="btn yes" onclick="javascript:printer.printTypeSel.goEditer($(this));"><em>确定</em></button><button id="editPhotoTypesBtnNo" class="btn no"><em>取消</em></button></p>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+
+});	
+</script>

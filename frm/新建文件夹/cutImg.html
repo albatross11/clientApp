@@ -1,0 +1,81 @@
+
+<script type="text/javascript">
+$(function(){
+	$('#leftBar').click(function(){
+		printer.printTypeSel.leftBarGo 
+	});    
+	var img = 'res/images/1.jpg';
+	var one = m.cutImg.loadImg({'dom':'idContainer','imgSrc':img,'allowResize':true, 'width':600, 'height':600*15.2/10.2, 'isImgMax':true, 'isMark':true}); 
+	printer.one=one;
+	one.jcrop_api.release(); //取消裁剪框
+	var touchstart = 'ontouchstart' in document ? 'touchstart' : 'mousedown' ;
+	printer.touchstart=touchstart;
+	$$E.removeEvent( one.it.container, printer.touchstart, one.it.r_mrSTART );	//删除旋转事件
+	$$E.removeEvent( one.it.container, printer.touchstart, one.it.m_mrSTART ); //删除移动事件  
+	$('li.cutBtn').click(function(){
+		if($(this).hasClass('sel')){
+			$(this).removeClass('sel');
+			one.jcrop_api.release(); 
+		}else{
+			$(this).addClass('sel').siblings('li').removeClass('sel');
+			one.jcrop_api.setSelect([m.cutImg.mark1,m.cutImg.mark2,m.cutImg.mark3,m.cutImg.mark4]);
+			$$E.addEvent( one.it.container, printer.touchstart, one.it.m_mrSTART );  
+			
+		}
+	});
+	$('li.rotationBtn').click(function(){
+		if($(this).hasClass('sel')){
+			$(this).removeClass('sel');
+			one.jcrop_api.release(); 
+			$('.btn_list').hide();
+		}else{
+			$(this).addClass('sel').siblings('li').removeClass('sel');;
+			one.jcrop_api.setSelect([m.cutImg.mark1,m.cutImg.mark2,m.cutImg.mark3,m.cutImg.mark4]); 
+			$('.btn_list').show();
+			
+		}
+	}); 
+});	
+</script>
+<div class="editPhoto cutPhoto cut">
+	<div class="title1">
+		<ul>
+			<li url="frm/editPhoto.html">提取照片<span></span></li>
+			<li class="sel" url="frm/editCertificate.html">编辑图片<span></span></li>
+			<li url="frm/editPhoto.html">拼版合成<span></span></li>
+			<li url="frm/editPhoto.html">保存冲印<span></span></li>
+		</ul> 
+	</div>
+	<div class="editLayer">
+	<table class="editLayer">
+		<tr>
+			<th>
+				<div class="leftbar" id="leftBar">
+					<ul>
+						<li class="cutBtn" url=" " onclick="javascript:;">裁剪<span></span></li>
+						<li class="rotationBtn" url=" ">换背景<span></span></li>  
+					</ul> 
+				</div> 
+			</th>
+			<td>
+				<div class="rightMain"> 
+					<ul class="btn_list">
+						<li class="reset_box" onclick="javascript:printer.one.it.reset();"><input class="btn reset" type="button" name="" value="重置"></li> 
+						<li onclick="javascript:printer.one.it.Rrotatebydegress(5);"><input class="rotation left" type="button" name=""></li> 
+						<li onclick="javascript:printer.one.it.Lrotatebydegress(5);"><input class="rotation right" type="button" name=""></li> 
+						<li onclick="javascript:printer.one.it.horizontal();"><input class="rotation horizontal" type="button" name=""></li> 
+						<li onclick="javascript:printer.one.it.vertical();"><input class="rotation vertical" type="button" name=""></li> 
+						<li onclick="javascript:printer.one.it.scale( 1 * Math.abs(printer.one.it._zoom) )"><input class="rotation amplify" type="button" name=""></li> 
+						<li onclick="javascript:printer.one.it.scale( -1 * Math.abs(printer.one.it._zoom) )"><input class="rotation shrink" type="button" name=""></li> 
+					</ul>
+					<div class="photos" id=""> 
+						<div id="idContainer"></div> 
+					</div>
+					<p><button class="btn yes"><em>确定</em></button><button class="btn no"><em>取消</em></button></p>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>
+
