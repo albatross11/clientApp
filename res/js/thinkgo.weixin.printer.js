@@ -1234,7 +1234,7 @@ printer = {
 		if (typeof(tip) == "undefined")
 			tip = '加载中';
 		var id = 'progress_' + new Date().getTime();
-		o.append('<div id="' + id + '" class="loading"><div class="progress"><span></span><p></p></div></div>');
+		o.append('<div id="' + id + '" class="loading"><div class="progress"><span>照片正从火星下载中,休息一下马上回来~~</span><p></p></div></div>');
 		return $('#' + id);
 	}
 };

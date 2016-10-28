@@ -94,34 +94,29 @@ $(function(){
 		//启动定时器检测动态打印码是否获取成功，如果获取失败则重新获取
 		//add by yaojinqiu20160818 要满足连得上服务器 dontaima2为空 打印预览页面不存在三个条件
 
-		 var dongtaima = $("#dongtai_number").html();
-//		var html = $('span').html();
-//		if(html == null){
-//			alert('空');
-//			// 执行变色
-//		}
-
-		 if(dongtaima == null || dongtaima == ''){
-			 var _url = printer.appConfig.api.server,
-					 _machineNo = printer.appConfig.sevice.machineNo;
-			 _url += '/api/testA/';
-//			 console.log(_url,"进入动态码为空判断,接下来判断getePhoto2存在以及testA接口调用");
-			 $.get(_url, function (testA) {
-				 var getedPhoto2 = $("#getedPhoto").html();
-//				 console.log(getedPhoto2,"hahahahahahaha");
-				 if ( getedPhoto2 == null) {
-					 if (testA) {
-						 console.log("出现了动态码为空的情况");
-						 printer.log.other.info("出现了动态吗为空的情况");
-						 printer.client.getToSetInfo();
-					 }
-				 }
-				 console.log(_url, testA);
-			 }, 'json');
-		 //重新获取动态码
-
-
-		 };
+//		 var dongtaima = $("#dongtai_number").html();
+//
+//		 if(dongtaima == null || dongtaima == ''){
+//			 var _url = printer.appConfig.api.server,
+//					 _machineNo = printer.appConfig.sevice.machineNo;
+//			 _url += '/api/testA/';
+////			 console.log(_url,"进入动态码为空判断,接下来判断getePhoto2存在以及testA接口调用");
+//			 $.get(_url, function (testA) {
+//				 var getedPhoto2 = $("#getedPhoto").html();
+////				 console.log(getedPhoto2,"hahahahahahaha");
+//				 if ( getedPhoto2 == null) {
+//					 if (testA) {
+//						 console.log("出现了动态码为空的情况");
+//						 printer.log.other.info("出现了动态吗为空的情况");
+//						 printer.client.getToSetInfo();
+//					 }
+//				 }
+//				 console.log(_url, testA);
+//			 }, 'json');
+//		 //重新获取动态码
+//
+//
+//		 };
 
 	}, 5000);
 })
