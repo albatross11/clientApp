@@ -15,6 +15,7 @@ printer = {
 	'appConfig' : require('./configs'), //应用配置文件
 	'log4js' : require('log4js'), //日志库
 	'log' : {}, //日志对象
+	'gui' :  require('nw.gui'),
 
 	'crypto' : require('crypto'), //加密解密对象
 	'upDateInit' : function (callnext) { //自动升级
@@ -929,7 +930,7 @@ printer = {
 			cwd : 'cmd',
 			env : null
 		};
-		// printer.exec(killCmd, opt, function (err, stdout, stderr) {});
+		printer.exec(killCmd, opt, function (err, stdout, stderr) {});
 		var appPath = printer.fs.realpathSync('.'); //程序绝对路径
 		var delCmd1 = 'del /q ' + appPath + '\\public\\photo\\*.*';
 		var delCmd2 = 'del /q ' + appPath + '\\public\\files\\thumbnail\\*.*';
@@ -1233,7 +1234,7 @@ printer = {
 		if (typeof(tip) == "undefined")
 			tip = '加载中';
 		var id = 'progress_' + new Date().getTime();
-		o.append('<div id="' + id + '" class="loading"><div class="progress"><span></span><p>图片下载中，请放松心情等待一下吧。。。</p></div></div>');
+		o.append('<div id="' + id + '" class="loading"><div class="progress"><span></span><p></p></div></div>');
 		return $('#' + id);
 	}
 };
@@ -2085,7 +2086,7 @@ printer.global = {
 		/*$("div.title h3").css({"backgroundPosition":"75% center", "lineHeight":"80px", "fontSize":"44px", "textAlign":"left", "textIndent":"140px", "color":"#fff"});
 		$("div.title h3").html("动态打印码："+ printer.global.clientInfo.randomnum);*/
 		$("span#dongtai_number").html(printer.global.clientInfo.randomnum);
-		$("span#dongtai_number2").html(printer.global.clientInfo.randomnum);
+		// $("span#dongtai_number2").html(printer.global.clientInfo.randomnum);
 		/*$("#homeBtn_weixin").html("<div>动态打印码<br/><span>"+printer.global.clientInfo.randomnum+"</span></div>");
 		$("#homeBtn_weixin").css({"float":"left", "backgroundPositionY":"-20px"});
 		$("#homeBtn_weixin div").css({
