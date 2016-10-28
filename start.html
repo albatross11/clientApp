@@ -94,14 +94,14 @@ $(function(){
 		//启动定时器检测动态打印码是否获取成功，如果获取失败则重新获取
 		//add by yaojinqiu20160818 要满足连得上服务器 dontaima2为空 打印预览页面不存在三个条件
 
-		 var dongtaima2 = $("#dongtai_number2").html();
+		 var dongtaima = $("#dongtai_number").html();
 //		var html = $('span').html();
 //		if(html == null){
 //			alert('空');
 //			// 执行变色
 //		}
-		console.log(dongtaima2);
-		 if(dongtaima2 == null || dongtaima2 == ''){
+
+		 if(dongtaima == null || dongtaima == ''){
 			 var _url = printer.appConfig.api.server,
 					 _machineNo = printer.appConfig.sevice.machineNo;
 			 _url += '/api/testA/';

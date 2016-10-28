@@ -2086,7 +2086,6 @@ printer.global = {
 		/*$("div.title h3").css({"backgroundPosition":"75% center", "lineHeight":"80px", "fontSize":"44px", "textAlign":"left", "textIndent":"140px", "color":"#fff"});
 		$("div.title h3").html("动态打印码："+ printer.global.clientInfo.randomnum);*/
 		$("span#dongtai_number").html(printer.global.clientInfo.randomnum);
-		// $("span#dongtai_number2").html(printer.global.clientInfo.randomnum);
 		/*$("#homeBtn_weixin").html("<div>动态打印码<br/><span>"+printer.global.clientInfo.randomnum+"</span></div>");
 		$("#homeBtn_weixin").css({"float":"left", "backgroundPositionY":"-20px"});
 		$("#homeBtn_weixin div").css({
