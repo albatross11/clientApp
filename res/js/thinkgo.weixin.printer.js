@@ -2687,7 +2687,20 @@ printer.normal = {
 										_unp = _a + _f1 + code + '.jpg';
 										printer.fs.exists(_unp, function (ex) {
 											if (ex)
-												printer.fs.unlinkSync(_unp);
+												// printer.fs.unlinkSync(_unp);
+											// printer.fs.unlink(_unp);
+											printer.fs.unlink(_unp, function(err){
+
+												if(err){
+													printer.log.other.info("2695出现了照片删除出错的情况");
+													throw err;
+
+												}
+
+												// console.log('文件:'+ _unp +'删除成功！');
+
+											});
+											// 	console.log("什么都没发生");
 										});
 										try {
 											clearTimeout(_auto_close_event);
