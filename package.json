@@ -7,7 +7,7 @@
     "window": {                                       /* APP的窗口属性 */
         "title": "Thingo Weixin Photo Printer",
         "icon": "logo.png",                           /* APP图标（windows下，状态栏上可见） */
-        "toolbar": true,                   /* 是否显示工具栏 */
+        "toolbar": false,                   /* 是否显示工具栏 */
         "width": 1080,                                /* 窗口初始化大小 */
         "height": 1920,
         "min_width": 1080,
