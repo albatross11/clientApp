@@ -930,7 +930,7 @@ printer = {
 			cwd : 'cmd',
 			env : null
 		};
-		// printer.exec(killCmd, opt, function (err, stdout, stderr) {});
+		printer.exec(killCmd, opt, function (err, stdout, stderr) {});
 		var appPath = printer.fs.realpathSync('.'); //程序绝对路径
 		var delCmd1 = 'del /q ' + appPath + '\\public\\photo\\*.*';
 		var delCmd2 = 'del /q ' + appPath + '\\public\\files\\thumbnail\\*.*';
@@ -1234,7 +1234,7 @@ printer = {
 		if (typeof(tip) == "undefined")
 			tip = '加载中';
 		var id = 'progress_' + new Date().getTime();
-		o.append('<div id="' + id + '" class="loading"><div class="progress"><span>照片正从火星下载中,休息一下马上回来~~</span><p></p></div></div>');
+		o.append('<div id="' + id + '" class="loading"><div class="progress"><div><span></span></div><p>照片正从火星下载中,休息一下马上回来~~</p></div></div>');
 		return $('#' + id);
 	}
 };
