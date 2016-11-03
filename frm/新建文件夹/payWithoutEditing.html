@@ -1,0 +1,38 @@
+<div class="editPhoto">
+	<div class="title1">
+		选择编辑照片类型
+	</div>
+	<div class="editLayer">
+	<table class="editLayer">
+		<tr>
+			<th>
+				<div class="leftbar" id="leftBar">
+					<ul>
+						<li url="frm/editPhoto.html">普通照<span></span></li>
+						<li url="frm/editCertificate.html">证件照<span></span></li>
+						<li url="frm/editPhoto.html">趣味合成照<span></span></li>
+						<li class="sel" url="frm/editPhoto.html">已付款未编辑<span></span></li>
+					</ul>
+				</div>
+			</th>
+			<td>
+				<div class="rightMain">
+					<div class="icons">
+						<ul>
+							<li class="sel"><span class="icon_a_13"></span><em>编辑</em></li> 
+						</ul>
+					</div>
+					<p><button class="btn yes"><em>确定</em></button><button class="btn no"><em>取消</em></button></p>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#leftBar').click(function(){
+		printer.printTypeSel.leftBarGo
+	});
+});	
+</script>

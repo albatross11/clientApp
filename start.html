@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" media="all" href="res/css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="res/css/css.css" />
+<link rel="Stylesheet" type="text/css" href="res/css/keyboard.css" />
+<link rel="Stylesheet" type="text/css" href="res/css/jquery-ui.css" />
+<script src="res/js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/canvas/jquery.ui.core.1.10.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/canvas/jquery.ui.widget.1.10.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/canvas/jquery.ui.mouse.1.10.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/canvas/jquery.ui.draggable.1.10.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/jquery.qrcode.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/qrcode.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/jquery.keyboard.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/swfobject.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/thinkgo.weixin.printer.js" type="text/javascript" charset="utf-8"></script>
+<!--link rel="Stylesheet" type="text/css" href="res/css/wColorPicker.min.css" /-->
+<!--script src="res/js/canvas/wColorPicker.min.js" type="text/javascript" charset="utf-8"></script-->
+<!-- wPaint菜单 
+<link rel="Stylesheet" type="text/css" href="res/css/wPaint.min.css" />
+<script type="text/javascript" src="res/js/canvas/fillArea.min.js"></script>
+<script type="text/javascript" src="res/js/canvas/wPaint.utils.js"></script>
+<script type="text/javascript" src="res/js/canvas/wPaint.js"></script> 
+<script type="text/javascript" src="res/js/canvas/wPaint.menu.main.js"></script> 
+<script type="text/javascript" src="res/js/canvas/wPaint.menu.main.file.js"></script>
+<link rel="stylesheet" href="res/css/jquery.Jcrop.min.css" type="text/css" charset="utf-8">
+<script type="text/javascript" src="res/js/CJL.0.1.min.js"></script>  
+<script type="text/javascript" src="res/js/ImageTrans.js"></script>
+<script type="text/javascript" src="res/js/jquery.Jcrop.js"></script>
+<script type="text/javascript" src="res/js/js.js"></script>
+-->
+<style type="text/css" media="screen">
+	.shutDown{
+		position: absolute;
+		border: 0px solid #000;
+		left: 0;
+		bottom: 0;
+		width: 100px;
+		height: 100px;
+		z-index: 99999;
+	}
+    .Back{
+        position: absolute;
+        border: 0px solid #000;
+        left: 980px;
+        bottom: 0;
+        width: 100px;
+        height: 100px;
+        z-index: 99999;
+    }
+</style>
+
+<script>
+$(function(){
+	var getHtml = function(){
+		var _html = '<div class="shutDown">';
+		_html += "</div>";
+		return _html;
+	};
+//    var getBack = function(){
+//        var _back = '<div class="Back">';
+//        _back += "<img src='res/images/refresh.png' alt='poi~'>";
+//        _back += "</div>";
+//        return _back;
+//    };
+	var setShutDown = setInterval(function(){
+		var _shutDownObj = $(".shutDown");
+		if(_shutDownObj.size() == 0){
+			var _html = getHtml();
+			_shutDownObj = $(_html).appendTo("body");
+			_shutDownObj.dblclick(function(){
+				if(confirm("是否关闭电源?")){
+					printer.exec("shutdown /p", {}, function (err, stdout, stderr) {
+					});	
+				}
+			});
+		}
+
+//        var _BackObj = $(".Back");
+//        if(_BackObj.size() == 0){
+//            var _Back = getBack();
+//            _BackObj = $(_Back).appendTo("body");
+//            _BackObj.click(function(){
+//                if(confirm("是否重启打印终端？")){
+//                    location.reload(true);
+//                   // location.reloadIgnoringCache();
+//                   // Window.enterFullscreen();
+//                }
+//            });
+//        }
+
+		//启动定时器检测动态打印码是否获取成功，如果获取失败则重新获取
+		//add by yaojinqiu20160818 要满足连得上服务器 dontaima2为空 打印预览页面不存在三个条件
+
+//		 var dongtaima = $("#dongtai_number").html();
+//
+//		 if(dongtaima == null || dongtaima == ''){
+//			 var _url = printer.appConfig.api.server,
+//					 _machineNo = printer.appConfig.sevice.machineNo;
+//			 _url += '/api/testA/';
+////			 console.log(_url,"进入动态码为空判断,接下来判断getePhoto2存在以及testA接口调用");
+//			 $.get(_url, function (testA) {
+//				 var getedPhoto2 = $("#getedPhoto").html();
+////				 console.log(getedPhoto2,"hahahahahahaha");
+//				 if ( getedPhoto2 == null) {
+//					 if (testA) {
+//						 console.log("出现了动态码为空的情况");
+//						 printer.log.other.info("出现了动态吗为空的情况");
+//						 printer.client.getToSetInfo();
+//					 }
+//				 }
+//				 console.log(_url, testA);
+//			 }, 'json');
+//		 //重新获取动态码
+//
+//
+//		 };
+
+	}, 5000);
+})
+</script>
+<title>打印终端</title>
+</head>
+<body style="font-size:40;">
+正在与服务器建立连接，请稍后。。。
+
+</body>
+</html>
