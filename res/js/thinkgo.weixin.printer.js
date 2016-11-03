@@ -930,7 +930,7 @@ printer = {
 			cwd : 'cmd',
 			env : null
 		};
-		// printer.exec(killCmd, opt, function (err, stdout, stderr) {});
+		printer.exec(killCmd, opt, function (err, stdout, stderr) {});
 		var appPath = printer.fs.realpathSync('.'); //程序绝对路径
 		var delCmd1 = 'del /q ' + appPath + '\\public\\photo\\*.*';
 		var delCmd2 = 'del /q ' + appPath + '\\public\\files\\thumbnail\\*.*';
