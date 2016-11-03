@@ -1,0 +1,53 @@
+<div class="editPhoto cutPhoto myOrder">
+	<div class="title1">
+		<ul>
+			<li class="sel" url="frm/editPhoto.html">提取照片<span></span></li>
+			<li url="frm/editCertificate.html">编辑图片<span></span></li>
+			<li url="frm/editPhoto.html">拼版合成<span></span></li>
+			<li url="frm/editPhoto.html">保存冲印<span></span></li>
+		</ul> 
+	</div>
+	<div class="editLayer">
+	<table class="editLayer">
+		<tr>
+			<th>
+				<div class="leftbar" id="leftBar">
+					<ul>
+						<li url="frm/myPhoto.html">我的相册<span></span></li>
+						<li class="sel" class="sel" url="frm/myOrder.html">我的订单<span></span></li>
+						<ul >
+							<li class="sel" url="frm/editPhoto.html">未打印<span></span></li>
+							<li url="frm/editPhoto.html">已打印<span></span></li>
+						</ul> 
+					</ul> 
+				</div>
+				<!-- <p>操作提示：<br />用户可在打印终端前使用背景布现场拍照编辑</p> -->
+			</th>
+			<td>
+				<div class="rightMain">
+					<div class="top">
+						<label><input type="checkbox" name="" value="">已选中一个文件</label>
+						<button class="btn yes"><em></em>确认</button>
+						<button class="btn no"><em></em>取消</button>
+					</div><!-- / -->
+					<div class="photos">
+						<ul>
+							<li class="sel"><span><img src="res/images/pic.jpg" alt=""><em> </em></span></li> 
+							<li><span><img src="res/images/pic.jpg" alt=""><em> </em></span></li> 
+							<li><span><img src="res/images/pic.jpg" alt=""><em> </em></span></li>   
+						</ul>
+					</div>
+					<p><button class="btn yes"><em>确定</em></button><button class="btn no"><em>取消</em></button></p>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#leftBar').click(function(){
+		printer.printTypeSel.leftBarGo
+	});
+});	
+</script>

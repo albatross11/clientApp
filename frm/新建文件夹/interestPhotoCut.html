@@ -1,0 +1,77 @@
+<div class="editPhoto cutPhoto interestPhotoCut">
+	<div class="title1">
+		<ul>
+			<li url="frm/editPhoto.html">提取照片<span></span></li>
+			<li url="frm/editCertificate.html">拼版合成<span></span></li>
+			<li class="sel" url="frm/editPhoto.html">编辑图片<span></span></li>
+			<li url="frm/editPhoto.html">保存冲印<span></span></li>
+		</ul> 
+	</div>
+	<div class="editLayer">
+	<table class="editLayer">
+		<tr>
+			<th>
+				<div class="leftbar" id="leftBar">
+					<ul>
+						<li url="fr	m/myPhoto.html">裁剪<span></span></li> 
+						<li url="frm/myOrder.html">旋转<span></span></li> 
+						<li class="sel" url="frm/myOrder.html">抠像<span></span></li>   
+					</ul> 
+				</div> 
+			</th>
+			<td>
+				<div class="rightMain">  
+					<ul class="btn_list" style="display:none;">
+						<li class="reset_box" onclick="javascript:printer.one.it.reset();"><input class="btn reset" type="button" name="" value="重置"></li> 
+						<li onclick="javascript:printer.one.it.Rrotatebydegress(5);"><input class="rotation left" type="button" name=""></li> 
+						<li onclick="javascript:printer.one.it.Lrotatebydegress(5);"><input class="rotation right" type="button" name=""></li> 
+						<li onclick="javascript:printer.one.it.horizontal();"><input class="rotation horizontal" type="button" name=""></li> 
+						<li onclick="javascript:printer.one.it.vertical();"><input class="rotation vertical" type="button" name=""></li> 
+						<li onclick="javascript:printer.one.it.scale( 1 * Math.abs(printer.one.it._zoom) )"><input class="rotation amplify" type="button" name=""></li> 
+						<li onclick="javascript:printer.one.it.scale( -1 * Math.abs(printer.one.it._zoom) )"><input class="rotation shrink" type="button" name=""></li> 
+					</ul>
+					<div class="inPhotoCut" id=""> 
+						<div class="inPhotoCut_box" id="inPhotoCut_box"></div> 
+					</div>
+					<div class="">
+						
+					</div><!-- / -->
+					<p><button class="btn yes"><em>确定</em></button><button class="btn no"><em>取消</em></button></p>
+					<div class="prompt">
+						<div>操作提示</div>
+						<div>
+							按需要选择模板，点击提取照片，选择照片进行编辑，选中后想更改，可进行缩放、旋转、删除等操作
+						</div> 
+					</div><!-- / -->
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#leftBar').click(function(){
+		printer.printTypeSel.leftBarGo
+	}); 
+	function saveImg(image) { 
+          /*var _this = this;  
+          $.ajax({
+            type: 'POST',
+            url: '/res/js/canvas/upload.php?t='+new Date().getTime(),
+            data: {image : image},
+            success: function (resp) { 
+              resp = $.parseJSON(resp); 
+              $('#wPaint-img').attr('src', '/canvas'+resp.img);
+            }
+          });*/
+        } 
+        // init wPaint
+       var s = $('#inPhotoCut_box').wPaint({
+          menuOffsetLeft: -140,
+          menuOffsetTop: -50,
+          saveImg: saveImg
+        });   
+
+});	
+</script>

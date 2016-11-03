@@ -1,0 +1,112 @@
+<div class="editPhoto cutPhoto photographs one">
+	<div class="title1">
+		<ul>
+			<li url="frm/editPhoto.html">提取照片<span></span></li>
+			<li url="frm/editCertificate.html">编辑图片<span></span></li>
+			<li class="sel" url="frm/editPhoto.html">拼版合成<span></span></li>
+			<li url="frm/editPhoto.html">保存冲印<span></span></li>
+		</ul> 
+	</div>
+	<div class="editLayer">
+	<table class="editLayer">
+		<tr>
+			<th>
+				<div class="leftbar" id="leftBar">
+					<ul>
+						<li url="fr	m/myPhoto.html">选择模板<span></span></li>
+						<div class="model_list _list_1">
+							<div class="model_name">
+								<div class="model_list_1">二合一 </div>
+								<div class="model_list_2">三合一 </div>
+								<div class="model_list_3">四合一</div>
+								<span class="move_mark"></span> 
+							</div> 
+							<div class="model_list_main">
+								<div class="style_1"><span></span></div> 
+								<div class="style_2"><span></span></div> 
+								<div class="style_3"><span></span></div> 
+								<div class="style_4"><span></span></div> 
+								<div class="style_5"><span></span></div> 
+							</div>
+						</div> 
+						<li class="sel" url="frm/myOrder.html">边框<span></span></li>
+						<div class="border_list clearfix">
+						   	<div class="border_main">
+						   		<div class="border_list_main ">
+							   		<div><span></span></div> 
+							   		<div><span></span></div> 
+							   		<div><span></span></div> 
+							   		<div><span></span></div>   
+							   	</div> 
+							   	<div class=" btn left"><span></span> </div> 
+							   	<div class=" btn right"><span></span> </div> 
+						   	</div> 	
+						   	<div class="opacity" >
+						   		<p class="title">透明度</p>	
+						   		<div class="process">
+						   			<span class="begin"></span>
+						   			<div class="process_box">
+						   			 	<div class="_box_main"></div> 
+						   			 	<span class="num">80%</span>
+						   			 	<div class="_box_move">|||</div> 
+						   			 </div> 
+						   			<span class="end"></span> 
+						   		</div> 
+						   	</div>	
+						</div>    
+					</ul> 
+				</div> 
+			</th>
+			<td>
+				<div class="rightMain">  
+					<div class="photographs_box">
+						<span class="l_r left"></span>
+						<div class="pics_view">
+							<div class="one_photo"></div> 
+						</div> 
+						<span class="l_r right"></span>
+					</div> 
+					<p><button class="btn yes"><em>确定</em></button><button class="btn no"><em>取消</em></button></p>
+					<!-- 图片调整 -->
+					<div class="editPhoto_btn">
+						<h3>图片调整</h3>
+						<div class="opacity" >
+					   		<p class="title">透明度</p>	
+					   		<div class="process">
+					   			<span class="begin"></span>
+					   			<div class="process_box">
+					   			 	<div class="_box_main"></div> 
+					   			 	<span class="num">80%</span>
+					   			 	<div class="_box_move">|||</div> 
+					   			 </div> 
+					   			<span class="end"></span> 
+					   		</div> 
+					   		<ul class="editPhoto_btn_list">
+					   			<li class="change"><span><b></b></span></li> 
+					   			<li class="left"><span><b></b></span></li> 
+					   			<li class="h"><span><b></b></span></li> 
+					   			<li class="r"><span><b></b></span></li> 
+					   			<li class="del"><span><b></b></span></li> 
+					   		</ul> 
+					   	</div>	
+					</div>
+					<!-- 提示框 -->
+					<div class="prompt">
+						<div>操作提示</div>
+						<div>
+							按需要选择模板，点击提取照片，选择照片进行编辑，选中后想更改，可进行缩放、旋转、删除等操作
+						</div> 
+					</div>  
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#leftBar').click(function(){
+		printer.printTypeSel.leftBarGo
+	});
+});	
+</script>
