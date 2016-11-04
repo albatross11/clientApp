@@ -17,6 +17,7 @@ printer = {
 	'log' : {}, //日志对象
 	'gui' :  require('nw.gui'),
 
+
 	'crypto' : require('crypto'), //加密解密对象
 	'upDateInit' : function (callnext) { //自动升级
 		var appPath = printer.fs.realpathSync('.');
@@ -930,7 +931,7 @@ printer = {
 			cwd : 'cmd',
 			env : null
 		};
-		printer.exec(killCmd, opt, function (err, stdout, stderr) {});
+		// printer.exec(killCmd, opt, function (err, stdout, stderr) {});
 		var appPath = printer.fs.realpathSync('.'); //程序绝对路径
 		var delCmd1 = 'del /q ' + appPath + '\\public\\photo\\*.*';
 		var delCmd2 = 'del /q ' + appPath + '\\public\\files\\thumbnail\\*.*';
@@ -2781,13 +2782,16 @@ printer.test = {'test':function(){
 };
 
 $(function () {
-    printer.test.test();
+    // printer.test.test();
 	printer.winInit();
 	printer.logInit(); //初始化日志对象
 	printer.uploadService(); //启用终端上传文件服务
 	printer.heartBeatInit(); //开启客户端心跳
 	printer.updateAds(); //自动更新广告
 	printer.upDateInit(function (_call) { //自动升级初始化
+		// var gui = require('nw.gui');
+		// var dir = "E:\\tmp";
+		// gui.App.setCrashDumpDir(dir);
 		var _sysCanPassIt = '';
 		$.each(printer.updateState, function (i, e) {
 			if (!e.sta) {
