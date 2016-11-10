@@ -2589,7 +2589,7 @@ printer.normal = {
 
                     $('#getedPhoto').
 						empty().
-					    append('<div style="height:20px;width:1080px"></div><img class="ani_in" ondragstart="return false;" height="350px"; width="auto"; src="public/photo/' + printObj.imgUrl + '.jpg"></div>');
+					    append('<div style="height:20px;width:1080px"></div><img class="ani_in" ondragstart="return false;" height="300px"; width="auto"; src="public/photo/' + printObj.imgUrl + '.jpg"></div>');
 						//20160606 图片预览时向左旋转90度
 					    //改回来了 好吧是我傻了 这功能没什么卵用
 						// append('<img style="-webkit-transform:rotate(270deg); " ;class="ani_in"  ondragstart="return false; height="25%"; width="25%"; src="public/photo/' + printObj.imgUrl + '.jpg">');
@@ -2794,7 +2794,7 @@ printer.test = {'test':function(){
 };
 
 $(function () {
-    printer.test.test();
+    // printer.test.test();
 	printer.winInit();
 	printer.logInit(); //初始化日志对象
 	printer.uploadService(); //启用终端上传文件服务
